@@ -1,0 +1,279 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --text-dark: #1F2937;
+    --text-light: #6B7280;
+    --font-primary: "Montserrat", sans-serif;
+    --border-color: #E5E7EB;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background-color: #DBEAFE;
+}
+
+.header{
+    width: 34%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    animation: fade-in-up 0.6s ease-in;
+}
+
+.sub-box-icon{
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    background-color: #2563EB;
+    color: white;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.header h2{
+    font-size: 30px;
+    font-family: var(--font-primary);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: #2563EB;
+}
+
+.paragraph{
+    color: var(--text-light);
+    font-family: var(--font-primary);
+    font-size: 14px;
+}
+
+.formBox{
+    width: 34%;
+    height: 590px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.082);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fade-in-up 0.6s ease-in;
+}
+
+form{
+    width: 85%;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.formHeader{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-primary);
+}
+
+.formHeader h2{
+    color: var(--text-dark);
+}
+
+.formParagraph{
+    font-size: 12px;
+}
+
+.input-con{
+    width: 100%;
+    height: 80px;
+    font-family: var(--font-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.input-con label{
+    font-size: 13px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.input-field{
+    width: 100%;
+    height: 50px;
+    background: #F0F7FF;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+/* icon */
+.input-field .bi-envelope,.bi-lock,.bi-person{
+    font-size: 17px;
+    color: var(--text-dark);
+    margin-right: 15px;
+}
+
+/* input */
+.input-field input{
+    width: 83%;
+    height: 45px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: transparent;
+    font-family: var(--font-primary);
+}
+
+/* focus effect */
+.input-field:focus-within{
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.input-field .password{
+    width: 75%;
+}
+
+.bi-eye,.bi-eye-slash{
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+.button {
+    cursor: pointer;
+    width: 97.5%;
+    height: 50px;       
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2563EB;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    font-family: var(--font-primary);
+    color: white;
+}
+
+.button:hover {
+    scale: 1.03;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.082);
+}
+
+.button:active {
+    scale: 1;
+}
+
+.option{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+hr{
+    width: 100%;
+    border: none;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.or{
+    color: var(--text-light);
+    font-family: var(--font-primary);
+}
+
+a{
+    text-decoration: none;
+    font-weight: 450;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/* keyframes */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* tablet screen */
+@media (min-width: 801px) and (max-width: 1200px) {
+    body{
+        height: 100vh;
+    }
+    .header{
+        width: 60%;
+        gap: 30px;
+    }
+
+    .formBox{
+        width: 50%;
+        height: 620px;
+    }
+
+    .input-field .password{
+        width: 77%;
+    }
+}
+
+/* mobile screen */
+@media (min-width: 0) and (max-width: 800px) {
+    .header{
+        width: 90%;
+        flex-direction: column;
+        height: 150px;
+        gap: 5px;
+    }
+
+    .formBox{
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .input-field input{
+        width: 78%;
+    }
+
+    .input-field .password{
+        width: 68%;
+    }
+}

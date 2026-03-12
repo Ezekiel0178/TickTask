@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="register.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    </head>
+    <body>
+        <div class="header">
+            <div class="sub-box-icon reasonIcon"><i class="bi bi-check2-square"></i></div>
+            <h2>TickTask</h2>
+            <p class="paragraph">✔ Tick it. Track it. Get it done.</p>
+        </div>
+        <div class="formBox">
+            <form id="registerForm">
+                <div class="formHeader">
+                    <h2>Create account</h2>
+                    <p class="paragraph formParagraph">Start organizing your tasks today</p>
+                </div>
+
+                <div class="input-con">
+                    <label for="email">Username</label>
+                    <div class="input-field">
+                        <i class="bi bi-person"></i>
+                        <input type="text" name="email" placeholder="johnDoe" id="registerName">
+                    </div>
+                </div>
+
+                <div class="input-con">
+                    <label for="email">Email</label>
+                    <div class="input-field">
+                        <i class="bi bi-envelope"></i>
+                        <input type="email" name="email" placeholder="example@gmail.com" id="registerEmail">
+                    </div>
+                </div>
+
+                <div class="input-con">
+                    <label for="password">Password</label>
+                    <div class="input-field">
+                        <i class="bi bi-lock"></i>
+                        <input type="password" class="password" name="email" placeholder="••••••••" id="pwd">
+                        <i class="bi bi-eye" onclick="reveal()" id="icon"></i>
+                    </div>
+                </div>
+
+                <button class="button">Create account&nbsp; <i class="bi bi-arrow-right"></i></button>
+
+                <div class="option">
+                    <hr> <span class="or">or</span> <hr>
+                </div>
+
+                <p class="paragraph">Already have an account? <a href="login.html">Sign in</a></p>
+            </form>
+        </div>
+        
+        <script src="auth.js" async defer></script>
+    </body>
+</html>
