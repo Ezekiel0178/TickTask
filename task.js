@@ -231,3 +231,26 @@ document.addEventListener("drop", function(e){
     }
 
 });
+
+function notifyPendingTasks() {
+  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  const pendingTasks = tasks.filter(task => !task.completed);
+
+  if (pendingTasks.length === 0) return; // no pending tasks
+
+  OneSignal.push(function() {
+    OneSignal.sendSelfNotification(
+      "TickTask Reminder",
+      `You still have ${pendingTasks.length} pending tasks today!`,
+      "https://tick-task-zeke.vercel.app", // optional click URL
+      "https://tick-task-zeke.vercel.app/logo.png", // optional icon
+      { include_player_ids: [] } // send to current user
+    );
+  });
+}
+
+// testing interval: 10 seconds = 10000 ms
+setInterval(notifyPendingTasks, 10000);
+
+// optional: notify immediately on page load
+window.addEventListener("load", notifyPendingTasks);
