@@ -15,27 +15,6 @@ const registerForm = document.getElementById("registerForm");
 const loginForm = document.getElementById("loginForm");
 const loginMessage = document.querySelector(".loginMessage");
 
-/* SIGN UP */
-if(registerForm){
-    registerForm.addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        const username = document.getElementById("registerName").value;
-        const email = document.getElementById("registerEmail").value;
-        const password = document.getElementById("pwd").value;
-
-        const user = { username, email, password };
-
-        localStorage.setItem("user", JSON.stringify(user));
-
-        alert("Account created!");
-
-        window.location.href = "login.html";
-
-    });
-}
-
 /* LOGIN */
 if(loginForm){
     loginForm.addEventListener("submit", function(e){
@@ -78,6 +57,29 @@ if(loginForm){
         }
     });
 }
+
+/* SIGN UP */
+if(registerForm){
+    registerForm.addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        const username = document.getElementById("registerName").value;
+        const email = document.getElementById("registerEmail").value;
+        const password = document.getElementById("pwd").value;
+
+        const user = { username, email, password };
+
+        localStorage.setItem("user", JSON.stringify(user));
+
+        alert("Account created!");
+
+        window.location.href = "login.html";
+
+    });
+}
+
+
 
 const logoutBtn = document.querySelector(".logoutBtn");
 
